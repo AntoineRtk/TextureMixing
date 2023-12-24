@@ -10,15 +10,15 @@ def compute_optimal_transport(X, Y, iterations = 100, projections = 1, return_as
     Compute the optimal transport between two point clouds.
 
     Parameters:
-    - X (ndarray): Source point cloud.
-    - Y (ndarray): Target point cloud.
-    - iterations (int): Number of iterations for the optimization process.
-    - projections (int): Number of random projections used in each iteration.
-    - return_asg (bool): If True, return the sorted indices of the final point cloud.
+    - X (ndarray): Source point cloud
+    - Y (ndarray): Target point cloud
+    - iterations (int): Number of iterations for the optimization process
+    - projections (int): Number of random projections used in each iteration
+    - return_asg (bool): If True, return the sorted indices of the final point cloud
 
     Returns:
-    - ndarray: Optimal transport between the source and target point clouds.
-    - (Optional) ndarray: Sorted indices of the final point cloud along with the source and target point clouds.
+    - ndarray: Optimal transport between the source and target point clouds
+    - (Optional) ndarray: Sorted indices of the final point cloud along with the source and target point clouds
     """
     
     Z = X.copy()
@@ -51,16 +51,16 @@ def compute_optimal_transport_barycenter(X_ini, lambdas, point_clouds, iteration
     Compute the optimal transport barycenter of multiple point clouds.
 
     Parameters:
-    - X_ini (ndarray): Initial point cloud for the barycenter computation.
-    - lambdas (list): List of weights corresponding to the contribution of each point cloud.
-    - point_clouds (list): List of point clouds (ndarrays) to be averaged.
-    - iterations (int): Number of iterations for the optimization process.
-    - projections (int): Number of random projections used in each iteration.
-    - return_asg (bool): If True, return the sorted indices of the final point cloud.
+    - X_ini (ndarray): Initial point cloud for the barycenter computation
+    - lambdas (list): List of weights corresponding to the contribution of each point cloud
+    - point_clouds (list): List of point clouds (ndarrays) to be averaged
+    - iterations (int): Number of iterations for the optimization process
+    - projections (int): Number of random projections used in each iteration
+    - return_asg (bool): If True, return the sorted indices of the final point cloud
 
     Returns:
-    - ndarray: Optimal transport barycenter of the input point clouds.
-    - (Optional) ndarray: Sorted indices of the final point cloud along with the input point clouds.
+    - ndarray: Optimal transport barycenter of the input point clouds
+    - (Optional) ndarray: Sorted indices of the final point cloud along with the input point clouds
     """
     
     assert 1 - 1e-5 < sum(lambdas) < 1 + 1e-5, 'the sum of the weights must be 1'
@@ -96,11 +96,11 @@ def compute_optimal_assignment(X, Y):
     Compute the optimal assignment between two sets of points by sorting them.
 
     Parameters:
-    - X (ndarray): Input matrix representing the source set of points.
-    - Y (ndarray): Input matrix representing the target set of points.
+    - X (ndarray): Input matrix representing the source set of points
+    - Y (ndarray): Input matrix representing the target set of points
 
     Returns:
-    - ndarray: Matrix representing the optimal assignment between points from X and Y.
+    - ndarray: The optimal assignment from X to Y
     """
     
     Z = np.zeros_like(X)
