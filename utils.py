@@ -328,14 +328,14 @@ def texture_mixing(textures, lambdas, noise=None, scales=4, orientations=4, patc
 def spectrum_constraint(X, Y):
     """
     Code adapted from MATLAB: Tartavel, G., Gousseau, Y., & Peyré, G. (2015). Variational texture synthesis with sparsity and spectrum constraints. Journal of Mathematical Imaging and Vision, 52, 124-144. to match the spectrum of an image Y to X.
-    
+    Match the spectrum of an image Y to that of image X using FFT-based processing.
+
     Parameters:
-    - X
-    - Y
-    
+    - X (ndarray): Reference image.
+    - Y (ndarray): Target image.
+
     Returns:
-    - img
-    
+    - ndarray: Image with the spectrum matched to that of the reference image.
     """
     
     # Compute FFT
